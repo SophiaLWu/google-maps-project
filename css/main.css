@@ -1,12 +1,38 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+
+#message-form {
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  padding: 5px;
+}
+
+#latitude,
+#longitude {
+  width: 75px;
+}
+
+#message {
+  width: 300px;
+  padding-bottom: 30px;
+  vertical-align: top;
 }
 
 #map {
-  width: 900px;
-  height: 600px;
+  width: 80%;
+  height: 70%;
   margin: 0 auto;
 }
