@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Message Map</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -17,7 +18,7 @@
       <input type="text" name="longitude" id="longitude">
       <label for="message">Message: </label>
       <textarea name="message" id="message"></textarea>
-      <input type="submit" value="Add your marker">
+      <input type="submit" class="btn" id="submit" value="Add your marker">
     </form>
     <div id="map"></div>
     <div class="options">
@@ -30,5 +31,8 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDaiZ4GeFVZpocz47n0o7ISGf1Sj89CG0&v=3&callback=initMap"> 
     </script>
+    <footer>
+      <small>&copy Sophia Wu 2017</small>
+    </footer>
   </body>
 </html>
