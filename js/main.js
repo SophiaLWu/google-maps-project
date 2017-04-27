@@ -12,10 +12,22 @@ var initMap = function() {
 
 $(document).ready(function() {
 
-  $("#message-form").submit(function(event) {
-    event.preventDefault();
-    addMarker();
-  });
+  var showMarkers = function() {
+    if (markers.length > 0) {
+      var bounds = new google.maps.LatLngBounds();
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+        bounds.extend(markers[i].position);
+      }
+      map.fitBounds(bounds);
+    }
+  };
+
+  var hideMarkers = function() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+  };
 
   var addMarker = function() {
     var input = $("#message-form").serializeArray();
@@ -40,5 +52,13 @@ $(document).ready(function() {
       }
     });
   };
+
+  $("#message-form").submit(function(event) {
+    event.preventDefault();
+    addMarker();
+  });
+
+  $("#show-markers").on("click", showMarkers);
+  $("#hide-markers").on("click", hideMarkers);
 
 });
